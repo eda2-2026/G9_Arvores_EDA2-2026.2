@@ -253,3 +253,48 @@ canvas {
     padding: 12px;
     text-align: center;
 }
+
+
+.stat-box span {
+    display: block;
+    font-size: 0.75rem;
+    color: #666;
+    margin-bottom: 4px;
+    font-weight: 600;
+}
+
+.stat-box strong {
+    font-size: 1.3rem;
+    color: var(--primary-green);
+}
+
+.btn {
+    background-color: var(--primary-green);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 1.05rem;
+    border-radius: 14px;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.1s;
+    font-weight: bold;
+    width: 100%;
+    box-shadow: 0 4px 12px rgba(46, 125, 50, 0.25);
+    margin-bottom: 10px;
+}
+
+.btn:hover {
+    background-color: #1b5e20;
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background-color: #ffffff;
+    color: var(--primary-green);
+    border: 2px solid var(--border-color);
+    box-shadow: none;
+}
+
+.btn-secondary:hover {
+    background-color: var(--light-green);
+}

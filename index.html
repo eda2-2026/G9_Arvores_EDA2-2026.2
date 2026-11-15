@@ -77,7 +77,31 @@
         </div>
     </div>
 
-   
+    <div id="endModal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <div id="end-icon" style="font-size: 2.5rem; margin-bottom: -5px;">🌳🍂</div>
+            <h2 id="end-title" style="color: var(--primary-green);">O Jardim Transbordou!</h2>
+            <p id="end-message" style="margin-bottom: 20px;">A árvore cresceu até a altura 5 e tomou conta de todo o jardim!</p>
+            
+            <div class="stats-grid">
+                <div class="stat-box">
+                    <span>Missões</span>
+                    <strong id="final-missions">0/8</strong>
+                </div>
+                <div class="stat-box">
+                    <span>Rotações AVL</span>
+                    <strong id="final-rotations">0</strong>
+                </div>
+                <div class="stat-box">
+                    <span>Tempo Restante</span>
+                    <strong id="final-time">0s</strong>
+                </div>
+            </div>
+
+            <button class="btn" onclick="restartGame()">🔄 Jogar Novamente</button>
+            <button class="btn btn-secondary" onclick="goToMenu()">🏠 Menu Inicial</button>
+        </div>
+    </div>
 
     <script src="avl.js"></script>
     <script src="game.js"></script>

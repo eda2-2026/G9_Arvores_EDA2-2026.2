@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sprout AVL - O Jardim Mágico</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>🌱 Sprout AVL: O Jardim Mágico</h1>
+        <div class="stats">
+            <span id="timer-display">⏱️ Tempo: 90s</span>
+            <span id="height-display">🌲 Altura: 0</span>
+        </div>
+    </header>
+
+    <div class="main-container">
+        <sidebar>
+            <div class="card controls-box">
+                <h3>🎮 Como Jogar</h3>
+                <p><kbd>←</kbd> <kbd>→</kbd> <kbd>↑</kbd> Mover Abelha</p>
+                <p><kbd>ESPAÇO</kbd> Colher Flor Atual</p>
+                <p><kbd>R</kbd> Voltar para a Raiz</p>
+                <p>🖱️ Clique direto nas flores</p>
+                <p style="color: #d32f2f; margin-top: 8px; font-weight: 600;">⚠️ Colher a flor errada faz nascer uma nova semente!</p>
+            </div>
+
+            <div class="card" style="flex: 1; display: flex; flex-direction: column;">
+                <h3>📜 Log </h3>
+                <div id="log-box" class="log-box">Sistema iniciado.
+Árvore AVL pronta.
+</div>
+            </div>
+        </sidebar>
+
+        <div class="canvas-container">
+            <div class="mission-float">
+                <h4>🎯 Missão Atual</h4>
+                <p id="mission-text">Carregando missão...</p>
+            </div>
+            <canvas id="gameCanvas"></canvas>
+        </div>
+    </div>
+
+    <div id="welcomeModal" class="modal">
+        <div class="modal-content">
+            <div style="font-size: 2.8rem; margin-bottom: -10px;">🐝🌸</div>
+            <h2>Sprout AVL - O Jardim Mágico</h2>
+            <p>Guie a abelhinha pelos galhos de uma <strong>Árvore AVL viva</strong>! Cumpra as 8 missões de poda antes que o tempo acabe ou a árvore cresça até a altura 5.</p>
+            
+            <div class="difficulty-options">
+                <div class="diff-card selected" id="diffEasy" onclick="setDifficulty('easy')">
+                    <h4>🌱 Jardineiro Iniciante</h4>
+                    <span>Sementes brotam a cada 6.5s. Ideal para observar as rotações.</span>
+                </div>
+                <div class="diff-card" id="diffHard" onclick="setDifficulty('hard')">
+                    <h4>🌺 Mestre Botânico</h4>
+                    <span>Sementes brotam a cada 4.2s. Desafio rápido de poda AVL!</span>
+                </div>
+            </div>
+
+            <button class="btn" onclick="startGame()">🎮 Começar a Cuidar do Jardim</button>
+            <button class="btn btn-secondary" onclick="openInstructions()">📖 Como Jogar</button>
+        </div>
+    </div>
+
+    <div id="instructionsModal" class="modal" style="display: none;">
+        <div class="modal-content" style="text-align: left;">
+            <h2>📖 Como Jogar</h2>
+            <p style="margin-bottom: 10px;">• <strong>Objetivo:</strong> Complete as 8 missões colhendo as flores corretas baseadas em seus valores numéricos.</p>
+            <p style="margin-bottom: 10px;">• <strong>Penalidade:</strong> Se você colher uma flor incorreta, ela é podada, mas uma nova semente brota imediatamente na árvore.</p>
+            <p style="margin-bottom: 10px;">• <strong>Árvore AVL:</strong> A cada inserção ou remoção, a árvore se rebalanceia sozinha aplicando rotações (LL, RR, LR, RL).</p>
+            <p style="margin-bottom: 20px;">• <strong>Derrota:</strong> Se o tempo esgotar ou a árvore atingir a altura máxima (5), o jardim transborda.</p>
+            <button class="btn" onclick="closeInstructions()">Entendi, Voltar</button>
+        </div>
+    </div>
+
+    <div id="endModal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <div id="end-icon" style="font-size: 2.5rem; margin-bottom: -5px;">🌳🍂</div>
+            <h2 id="end-title" style="color: var(--primary-green);">O Jardim Transbordou!</h2>
+            <p id="end-message" style="margin-bottom: 20px;">A árvore cresceu até a altura 5 e tomou conta de todo o jardim!</p>
+            
+            <div class="stats-grid">
+                <div class="stat-box">
+                    <span>Missões</span>
+                    <strong id="final-missions">0/8</strong>
+                </div>
+                <div class="stat-box">
+                    <span>Rotações AVL</span>
+                    <strong id="final-rotations">0</strong>
+                </div>
+                <div class="stat-box">
+                    <span>Tempo Restante</span>
+                    <strong id="final-time">0s</strong>
+                </div>
+            </div>
+
+            <button class="btn" onclick="restartGame()">🔄 Jogar Novamente</button>
+            <button class="btn btn-secondary" onclick="goToMenu()">🏠 Menu Inicial</button>
+        </div>
+    </div>
+
+    <script src="avl.js"></script>
+    <script src="game.js"></script>
+</body>
+</html>

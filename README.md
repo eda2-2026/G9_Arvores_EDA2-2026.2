@@ -40,3 +40,20 @@ G9_Arvores_EDA2-2026.2/
 ├── avl.js           # Motor da Estrutura de Dados (nós, alturas, fator de balanceamento e rotações)
 ├── game.js          # Lógica do jogo, sistema de missões e renderização no Canvas
 └── README.md        # Documentação oficial do projeto
+```
+
+
+## Video
+
+
+<div align="center">
+  <a href="https://youtu.be/RbQNlugw9lQ">
+    <img src="https://img.youtube.com/vi/RbQNlugw9lQ/hqdefault.jpg" width="50%" alt="Vídeo no YouTube">
+  </a>
+</div>
+
+<p align="center">
+  <b>Autores:</b>
+  <a href="https://github.com/rayenealmeida">Rayene Almeida</a> e 
+  <a href="https://github.com/RenataKurzawa">Renata Quadros</a>
+</p>
